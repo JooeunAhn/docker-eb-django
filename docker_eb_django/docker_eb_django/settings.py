@@ -73,10 +73,15 @@ WSGI_APPLICATION = 'docker_eb_django.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
+from .secret import RDS_PASSWORD
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'HOST': "tagger-test.cm9durumc4t2.ap-northeast-2.rds.amazonaws.com",
+        "PORT": 3306,
+        'NAME': 'tagger_test',
+        'USER': "mom",
+        "PASSWORD": RDS_PASSWORD
     }
 }
 
