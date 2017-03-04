@@ -1,6 +1,7 @@
 *.pyc
 __pycache__
 static/
+secret.py
 media/
 staticfiles/
 db.sqlite3
